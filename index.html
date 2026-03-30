@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>FAQ Business MRR - Ahel Digital</title>
+<meta name="description" content="Découvre comment fonctionne le Business MRR avec 30+ questions/réponses complètes - Ahel Digital">
+<meta name="theme-color" content="#00d4ff">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body {
+  width: 100%; height: 100%;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #000; color: #fff; overflow-x: hidden;
+}
+header {
+  background: linear-gradient(135deg, #000 0%, #1a1a2e 100%);
+  padding: 20px 15px; text-align: center;
+  border-bottom: 2px solid #00d4ff;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 5px 20px rgba(0,212,255,0.1);
+}
+.logo-title {
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 900; color: #00d4ff;
+  text-transform: uppercase; letter-spacing: 2px;
+}
+.logo-sub { font-size: 0.85rem; color: #a0a0a0; margin-top: 4px; }
+.container { max-width: 100%; padding: 15px; margin: 0 auto; }
+.tab-nav {
+  display: flex; gap: 8px; margin-bottom: 20px;
+  overflow-x: auto; padding: 10px 0;
+  -webkit-overflow-scrolling: touch;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+.tab-btn {
+  padding: 10px 16px;
+  background: rgba(0,212,255,0.1);
+  border: 2px solid #00d4ff;
+  border-radius: 8px; color: #00d4ff;
+  font-weight: 700; font-size: 0.9rem;
+  cursor: pointer; white-space: nowrap; flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.tab-btn.active { background: #00d4ff; color: #000; box-shadow: 0 5px 15px rgba(0,212,255,0.3); }
+.faq-section { display: none; }
+.faq-section.active { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.faq-item {
+  margin-bottom: 12px; border-radius: 12px; overflow: hidden;
+  background: rgba(0,212,255,0.05); border-left: 4px solid #00d4ff;
+}
+.faq-item.s2 { border-left-color: #ff006e; background: rgba(255,0,110,0.05); }
+.faq-item.s3 { border-left-color: #00ff88; background: rgba(0,255,136,0.05); }
+.faq-item.s4 { border-left-color: #ffaa00; background: rgba(255,170,0,0.05); }
+.faq-question {
+  padding: 15px; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  -webkit-user-select: none; user-select: none;
+}
+.faq-question h3 { font-size: clamp(0.95rem, 3vw, 1.1rem); font-weight: 700; flex: 1; line-height: 1.3; }
+.faq-arrow { font-size: 1.2rem; flex-shrink: 0; transition: transform 0.3s ease; display: inline-block; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-item.open .faq-answer { max-height: 3000px; }
+.faq-answer-content {
+  padding: 0 15px 15px 15px;
+  font-size: clamp(0.88rem, 2.5vw, 0.98rem);
+  color: #b0b0b0; line-height: 1.7;
+}
+.highlight { color: #00d4ff; font-weight: 700; }
+.highlight.pink { color: #ff006e; }
+.highlight.green { color: #00ff88; }
+.highlight.orange { color: #ffaa00; }
+footer {
+  background: rgba(0,0,0,0.8);
+  border-top: 2px solid rgba(0,212,255,0.2);
+  padding: 25px 15px; text-align: center; margin-top: 30px;
+}
+footer p { color: #a0a0a0; font-size: 0.9rem; margin-bottom: 15px; font-weight: 600; }
+.social-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 15px 0; }
+.social-btn {
+  padding: 12px 20px; background: #00d4ff; color: #000;
+  text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+.social-btn:active { opacity: 0.8; }
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff006e, #ff0055);
+  color: #fff; padding: 15px 35px; border-radius: 10px;
+  text-decoration: none; font-weight: 700; margin-top: 15px;
+}
+.email-icon {
+  display: inline-block; padding: 12px 20px;
+  background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
+  border: 2px solid #00d4ff; color: #00d4ff;
+  text-decoration: none; border-radius: 8px;
+  font-size: 1.5rem; margin: 10px 5px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-title">⚡ AHEL DIGITAL</div>
+  <div class="logo-sub">FAQ MRR · 30+ Questions &amp; Réponses Complètes</div>
+</header>
+
+<div class="container">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('fondamentaux', this)">📚 Fondamentaux</button>
+    <button class="tab-btn" onclick="showTab('objections', this)">⚠️ Objections</button>
+    <button class="tab-btn" onclick="showTab('chiffres', this)">💰 Chiffres</button>
+    <button class="tab-btn" onclick="showTab('strategie', this)">🎯 Stratégie</button>
+    <button class="tab-btn" onclick="showTab('technique', this)">🔧 Technique</button>
+  </div>
+
+  <!-- FONDAMENTAUX -->
+  <div id="fondamentaux" class="faq-section active">
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>C'est quoi le business MRR ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Le <span class="highlight">Business MRR (Master Resell Rights)</span> c'est un modèle où tu achètes une formation digitale une seule fois, et tu obtiens le droit de la <span class="highlight">revendre à l'infini</span> en gardant 100% des profits. Tu n'as pas besoin de créer ton propre produit. Tu revends ce qui existe déjà.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Pourquoi "illimité" ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Parce que contrairement à un produit physique, un produit digital ne s'épuise jamais. Tu peux le vendre à <span class="highlight">1 personne ou 10 000 personnes</span>, le coût reste le même. Pas de stock, pas de livraison, pas de limite.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Comment j'en fais de l'argent ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Simple : tu achètes la formation, tu la revends au même prix ou plus cher, et tu gardes <span class="highlight">100% de chaque vente</span>. Pas d'intermédiaire, pas de commission à payer. Chaque vente = ton argent directement.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Et si quelqu'un la pirate ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          C'est une question normale. Mais les gens qui paient ne paient pas juste pour le contenu, ils paient pour <span class="highlight">le support, la communauté, et la relation</span>. Les pirates ne sont généralement pas tes clients de toute façon.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Quel type de formation marche ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Les formations qui enseignent des compétences à forte demande : <span class="highlight">business en ligne, marketing, développement personnel, finances</span>. Le critère numéro 1 : est-ce que les gens sont prêts à payer pour apprendre ça ?
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>C'est légal ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          <span class="highlight">Oui, totalement légal.</span> Tu achètes une licence qui t'autorise explicitement à revendre. C'est comme acheter une franchise, mais sans les frais mensuels et avec 100% des profits.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Est-ce que c'est un MLM ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          <span class="highlight pink">Non, absolument pas.</span> Dans un MLM tu recrutes des gens et tu touches sur leurs ventes. Ici, tu vends toi-même un produit, et tu gardes 100% de TES ventes. Personne ne touche sur ton travail.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- OBJECTIONS -->
+  <div id="objections" class="faq-section">
+
+    <div class="faq-item s2">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Le marché est saturé, non ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Le marché des formations en ligne dépasse <span class="highlight pink">400 milliards $</span> et continue de croître. Ce n'est pas saturé, c'est compétitif. La différence ? Tu te démarques par ton image, ton audience, et comment tu communiques.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item s2">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Je n'ai pas d'audience, comment je fais ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Tout le monde commence à zéro. <span class="highlight pink">TikTok et Instagram</span> permettent de toucher des milliers de personnes sans audience préalable grâce à l'algorithme. Poste régulièrement, reste authentique, ton audience se construit avec le temps.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item s2">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Je ne suis pas expert, je peux quand même vendre ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Oui. Tu n'as pas besoin d'être un expert pour revendre une formation créée par des experts. Tu es un <span class="highlight pink">distributeur</span>, pas le professeur. Partage ton parcours, tes résultats, et ta transformation.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item s2">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Est-ce que j'ai besoin d'un site web ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Non obligatoire au départ. Tu peux démarrer avec <span class="highlight pink">juste les réseaux sociaux</span> et un lien de paiement. Un site professionnel aide à long terme, mais il ne doit pas être un frein pour commencer.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CHIFFRES -->
+  <div id="chiffres" class="faq-section">
+
+    <div class="faq-item s3">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Combien ça coûte pour commencer ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          L'investissement de départ varie selon la formation choisie. Généralement entre <span class="highlight green">quelques centaines à quelques milliers d'euros</span>. C'est un achat unique — pas d'abonnement mensuel, pas de renouvellement.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item s3">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Combien peut-on gagner ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Il n'y a <span class="highlight green">pas de plafond</span>. Ça dépend de combien tu vends et à quel prix. 1 vente par semaine à 300€ = 1 200€/mois. 1 vente par jour = plus de 9 000€/mois. Tout dépend de ton effort et ta régularité.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item s3">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Quand est-ce qu'on peut rentabiliser ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Dès ta <span class="highlight green">première vente</span>. Si tu achètes à 300€ et que tu revends à 300€, tu es déjà rentabilisé. Chaque vente suivante est du profit pur.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item s3">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Combien de temps faut-il y consacrer ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Au minimum <span class="highlight green">1 à 2 heures par jour</span> pour créer du contenu et répondre aux prospects. Plus tu investis du temps, plus tu grandis vite. Beaucoup font ça en complément de leur emploi salarié.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STRATÉGIE -->
+  <div id="strategie" class="faq-section">
+
+    <div class="faq-item s4">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Quelle plateforme choisir ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          <span class="highlight orange">TikTok</span> est idéal pour la croissance rapide et toucher de nouvelles personnes. <span class="highlight orange">Instagram</span> est excellent pour la conversion et fidéliser ta communauté. Les deux ensemble, c'est la combinaison gagnante.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item s4">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Quel type de contenu poster ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Une bonne stratégie : <span class="highlight orange">1/3 de contenu viral</span> (pour l'audience), <span class="highlight orange">1/3 de valeur</span> (pour la confiance), <span class="highlight orange">1/3 de vente</span> (pour les résultats). Ne vends pas à chaque post — éduque d'abord, vends ensuite.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item s4">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Comment closer une vente ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Écoute d'abord le problème du prospect. Montre ensuite en quoi ta formation est la <span class="highlight orange">solution exacte</span> à ce problème. Ne vends pas le produit, vends la <span class="highlight orange">transformation</span> qu'il va vivre.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item s4">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Faut-il montrer son visage ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Ce n'est pas obligatoire, mais <span class="highlight orange">montrer son visage convertit mieux</span>. Les gens achètent à des personnes qu'ils connaissent et à qui ils font confiance. Ton authenticité est ton meilleur argument de vente.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TECHNIQUE -->
+  <div id="technique" class="faq-section">
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Comment livrer la formation à l'acheteur ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Via un lien de téléchargement privé, une plateforme comme <span class="highlight">Teachable, Kajabi, ou Gumroad</span>, ou même un lien Google Drive sécurisé. Simple, automatisable, sans intervention manuelle.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Comment encaisser les paiements ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          <span class="highlight">Stripe, PayPal, SumUp</span> sont les options les plus populaires. Tu peux aussi utiliser des plateformes comme Gumroad qui gèrent les paiements et la livraison automatiquement.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Comment automatiser tout ça ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Avec les bons outils, <span class="highlight">tout est automatique</span> : paiement reçu → email de livraison envoyé → accès accordé. Tu n'as rien à faire manuellement. C'est la vraie puissance du digital.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Dois-je créer une entreprise ?</h3>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          Pour commencer, non. Mais dès que tu génères des revenus réguliers, il est conseillé de créer une <span class="highlight">micro-entreprise ou auto-entreprise</span> pour être en règle. Consulte un comptable pour la situation dans ton pays.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>🚀 Prêt à lancer ton Business MRR ?</p>
+  <div style="margin: 15px 0;">
+    <a href="mailto:contact@aheldigital.com" class="email-icon">✉️</a>
+  </div>
+  <div class="social-links">
+    <a href="https://www.tiktok.com/@ahel.digital" class="social-btn">TikTok 📱</a>
+    <a href="https://www.instagram.com/ahel.digital" class="social-btn" style="background:#ff006e; color:#fff;">Instagram 📸</a>
+  </div>
+  <a href="https://aheldigital.com" class="cta-button">Visite mon site →</a>
+  <p class="brand-footer" style="margin-top:20px; font-size:0.85rem; color:#00d4ff;">© 2024 Ahel Digital</p>
+</footer>
+
+<script>
+function showTab(tabId, btn) {
+  // Cacher toutes les sections
+  document.querySelectorAll('.faq-section').forEach(function(s) {
+    s.classList.remove('active');
+  });
+  // Désactiver tous les boutons
+  document.querySelectorAll('.tab-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  // Afficher la section choisie
+  document.getElementById(tabId).classList.add('active');
+  // Activer le bouton cliqué
+  btn.classList.add('active');
+}
+
+function toggleFaq(questionEl) {
+  var item = questionEl.parentElement;
+  var isOpen = item.classList.contains('open');
+  // Fermer tous les items ouverts de la même section
+  var section = item.closest('.faq-section');
+  section.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+    openItem.classList.remove('open');
+  });
+  // Si l'item n'était pas ouvert, l'ouvrir
+  if (!isOpen) {
+    item.classList.add('open');
+  }
+}
+</script>
+
+</body>
+</html>
